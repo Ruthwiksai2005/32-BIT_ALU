@@ -78,6 +78,8 @@ source /cadence/install/cshrc (mention the path of the tools)
 (The path of cshrc could vary depending on the installation destination)
 
 After this, you can see the window like below
+<img width="1918" height="1079" alt="Screenshot 2025-10-07 141412" src="https://github.com/user-attachments/assets/298ff64e-4955-4957-adb5-032008efc04b" />
+
 
 #### Fig 2: Invoke the Cadence Environment
 
@@ -177,6 +179,8 @@ Outputs: Elaborate database updated in the mapped library if successful, generat
 After elaboration, the file will come under snapshot. Select the test bench and simulate it.
 
 #### Fig 8: Elaboration Launch Option
+<img width="1919" height="1022" alt="Screenshot 2025-10-07 141747" src="https://github.com/user-attachments/assets/14172d7d-6c03-4667-809f-acf10b85768e" />
+
 
 ### Step 3: Simulation:
 – Simulate with the given test vectors over a period of time to observe the output behaviour.
@@ -190,6 +194,8 @@ Simulations allow dumping design and test bench signals into a waveform
 Steps for simulation – Run the simulation command with simulator options
 
 #### Fig 9: Design Browser window for simulation
+<img width="1919" height="1019" alt="Screenshot 2025-10-07 142034" src="https://github.com/user-attachments/assets/1ce4ff62-6009-4ae9-b0a0-94ac0cc0b445" />
+
 
 #### Fig 10: Simulation Waveform Window
 
