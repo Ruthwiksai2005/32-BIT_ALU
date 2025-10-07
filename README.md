@@ -41,7 +41,29 @@ Similarly, create your test bench using gedit <filename_tb>.v to open a new blan
 
 ## Test Bench :
 
-(Include test bench program here)
+```
+module alu_32bit_tb_case;
+reg [31:0]a;
+reg [31:0]b;
+reg [2:0]f;
+wire [31:0]y;
+alu_32bit_case test2(.y(y),.a(a),.b(b),.f(f));
+initial
+begin
+a=32'h00000000;
+b=32'h10101010;
+#10 f=3'b000;
+#10 f=3'b001;
+#10 f=3'b010;
+#10 f=3'b011;
+#10 f=3'b100;
+#10 f=3'b101;
+#10 f=3'b110;
+#10 f=3'b111;
+#50 $finish;
+end
+endmodule
+```
 
 Use the Save option or Ctrl+S to save the code, or click on the save option from the top-right corner and close the text file.
 
@@ -74,6 +96,8 @@ It will invoke the nclaunch window for functional simulation. We can compile, el
 Select Multiple Step and then select “Create cds.lib File” as shown in the figure below
 
 Click the .cds.lib file and save the file by clicking on the Save option
+<img width="1919" height="1075" alt="Screenshot 2025-09-20 091932" src="https://github.com/user-attachments/assets/0d08af98-b7f9-4257-89da-48820c9a290f" />
+
 
 #### Fig 4:cds.lib file Creation
 Save .lib file and select the correct option for cds.lib file format based on the HDL Language and Libraries used.
@@ -83,6 +107,9 @@ Select “Don’t include any libraries (verilog design)” from “New cds.lib 
 We are simulating a verilog design without using any libraries
 
 Click “OK” in the “nclaunch: Open Design Directory” window, as shown in the figure below
+<img width="1919" height="1068" alt="Screenshot 2025-09-20 092024" src="https://github.com/user-attachments/assets/1e6419ad-f35f-4834-acce-28a3a3e2dca3" />
+
+
  
 #### Fig 5: Selection of Don’t include any libraries
 An ‘NCLaunch window’ appears as shown in the figure below
@@ -92,8 +119,12 @@ Left side, you can see the HDL files. The right side of the window has Worklib a
 Worklib is the directory where all the compiled codes are stored, while Snapshot will have the output of elaboration, which in turn goes for simulation.
 
 To perform the function simulation, the following three steps are involved: Compilation, Elaboration and Simulation.
+<img width="1919" height="1079" alt="Screenshot 2025-09-20 092053" src="https://github.com/user-attachments/assets/0ad59f4f-6647-4371-89da-efba3482dbfb" />
+
 
 #### Fig 6: Nclaunch Window
+
+<img width="1917" height="1074" alt="Screenshot 2025-09-20 092436" src="https://github.com/user-attachments/assets/87a92b2d-e872-4bf5-98d0-3f6aec0b4634" />
 
 ### Step 1: Compilation:
 – Process to check the correct Verilog language syntax and usage
@@ -120,6 +151,8 @@ After compilation, it will come under worklib. You can see on the right side win
 select the test bench and compile it. It will come under Worklib. Under Worklib, you can see the module and test bench.
 
 The cds.lib file is an ASCII text file. It defines which libraries are accessible and where they are located. It contains statements that map logical library names to their physical directory paths. For this Design, you will define a library called “worklib”
+<img width="1919" height="1079" alt="Screenshot 2025-09-20 093004" src="https://github.com/user-attachments/assets/135ab0c9-9611-41a5-8992-8de711696722" />
+
 
 ### Step 2: Elaboration:
 To check the port connections in a hierarchical design
@@ -166,6 +199,8 @@ Synthesis requires three files as follows,
 
 ◦ Verilog/VHDL Files (.v or .vhdl or .vhd)
 
+<img width="1919" height="1079" alt="Screenshot 2025-09-20 094141" src="https://github.com/user-attachments/assets/18cc25ef-120b-4822-8be6-01d56c250744" />
+
 ### Performing Synthesis
 The Liberty files are present in the library path,
 
@@ -176,10 +211,15 @@ The Liberty files are present in the library path,
 • Genus Script file with .tcl file Extension commands are executed one by one to synthesize the netlist. Or use source run.tcl command in the terminal window to view the netlist, and a log file will be created in the working folder.
 
 #### Fig 11: Synthesis RTL Schematic 
+<img width="1919" height="1018" alt="Screenshot 2025-10-06 083823" src="https://github.com/user-attachments/assets/1c1e8096-5060-4f72-9ef0-d00f67cd6c95" />
 
 #### Fig 12: Area report
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/0b138937-d482-4e9d-9629-9d9787c2af41" />
+
 
 #### Fig 13: Power Report
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/c99bdd2c-b01d-46e7-ab57-4136ba42012b" />
+
 
 ## Result
 The functionality of the 32-bit ALU was successfully verified using a test bench and simulated with the nclaunch tool. Additionally, the generic netlist of the 32-bit ALU was generated, and the corresponding area and power reports were analyzed and tabulated using Cadence Genus.
